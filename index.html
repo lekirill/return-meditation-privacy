@@ -18,6 +18,27 @@
       max-width: 640px;
       margin: 0 auto;
     }
+    .lang-switcher {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+    .lang-btn {
+      background: none;
+      border: 1px solid #2a2a2a;
+      border-radius: 8px;
+      color: #8a8a8a;
+      cursor: pointer;
+      font-size: 14px;
+      padding: 6px 16px;
+      transition: all 0.15s;
+    }
+    .lang-btn.active {
+      border-color: #d4d4d4;
+      color: #e8e8e8;
+    }
+    .lang-section { display: none; }
+    .lang-section.active { display: block; }
     h1 {
       font-size: 32px;
       font-weight: 300;
@@ -39,9 +60,7 @@
       color: #c0c0c0;
       margin-bottom: 12px;
     }
-    a {
-      color: #e8e8e8;
-    }
+    a { color: #e8e8e8; }
     .highlight {
       background: #1a1a1a;
       border-radius: 12px;
@@ -54,62 +73,143 @@
 </head>
 <body>
   <div class="container">
-    <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: March 14, 2026</p>
 
-    <div class="highlight">
-      Return does not collect any personal data. Everything stays on your device.
+    <div class="lang-switcher">
+      <button class="lang-btn active" onclick="setLang('en')">English</button>
+      <button class="lang-btn" onclick="setLang('ru')">Русский</button>
     </div>
 
-    <h2>Overview</h2>
-    <p>
-      Return is a minimalist meditation app. We are committed to protecting your privacy.
-      This policy explains what data the app processes and how it is handled.
-    </p>
+    <!-- English -->
+    <div class="lang-section active" id="lang-en">
+      <h1>Privacy Policy</h1>
+      <p class="updated">Last updated: March 17, 2026</p>
 
-    <h2>Data Collection</h2>
-    <p>
-      Return does not collect any personal data. All information you enter in the app —
-      practice sessions, mood check-ins, settings, and notification preferences — is stored
-      exclusively on your device using Apple's built-in storage technologies (SwiftData and UserDefaults).
-      This data never leaves your device and is never transmitted to us or any third party.
-    </p>
+      <div class="highlight">
+        Return does not collect any personal data. Everything stays on your device.
+      </div>
 
-    <h2>Local Notifications</h2>
-    <p>
-      The app may send local notifications to remind you to practice. These notifications
-      are generated entirely on your device. We do not use push notification servers and
-      do not receive any information about whether you interact with notifications.
-    </p>
+      <h2>Overview</h2>
+      <p>
+        Return is a minimalist meditation app. We are committed to protecting your privacy.
+        This policy explains what data the app processes and how it is handled.
+      </p>
 
-    <h2>Third-Party Services</h2>
-    <p>
-      Return does not use any third-party analytics, advertising, crash reporting, or tracking services.
-      No third-party SDKs are included in the app.
-    </p>
+      <h2>Data Collection</h2>
+      <p>
+        Return does not collect any personal data. All information you enter in the app —
+        practice sessions, mood check-ins, settings, and notification preferences — is stored
+        exclusively on your device using Apple's built-in storage technologies (SwiftData and UserDefaults).
+        This data never leaves your device and is never transmitted to us or any third party.
+      </p>
 
-    <h2>Data Sharing</h2>
-    <p>
-      We do not share, sell, rent, or transfer any data to third parties — because we do not
-      collect any data in the first place.
-    </p>
+      <h2>Local Notifications</h2>
+      <p>
+        The app may send local notifications to remind you to practice. These notifications
+        are generated entirely on your device. We do not use push notification servers and
+        do not receive any information about whether you interact with notifications.
+      </p>
 
-    <h2>Children's Privacy</h2>
-    <p>
-      Return does not collect personal information from anyone, including children under the age of 13.
-    </p>
+      <h2>Third-Party Services</h2>
+      <p>
+        Return does not use any third-party analytics, advertising, crash reporting, or tracking services.
+        No third-party SDKs are included in the app.
+      </p>
 
-    <h2>Changes to This Policy</h2>
-    <p>
-      If we make changes to this policy, we will update the "Last updated" date at the top of this page.
-      Continued use of the app after changes constitutes acceptance of the updated policy.
-    </p>
+      <h2>Data Sharing</h2>
+      <p>
+        We do not share, sell, rent, or transfer any data to third parties — because we do not
+        collect any data in the first place.
+      </p>
 
-    <h2>Contact</h2>
-    <p>
-      If you have questions about this Privacy Policy, please contact:<br />
-      <a href="mailto:lekirill@icloud.com">lekirill@icloud.com</a>
-    </p>
+      <h2>Children's Privacy</h2>
+      <p>
+        Return does not collect personal information from anyone, including children under the age of 13.
+      </p>
+
+      <h2>Changes to This Policy</h2>
+      <p>
+        If we make changes to this policy, we will update the "Last updated" date at the top of this page.
+        Continued use of the app after changes constitutes acceptance of the updated policy.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        If you have questions about this Privacy Policy, please contact:<br />
+        <a href="mailto:klesnikov@gmail.com">klesnikov@gmail.com</a>
+      </p>
+    </div>
+
+    <!-- Russian -->
+    <div class="lang-section" id="lang-ru">
+      <h1>Политика конфиденциальности</h1>
+      <p class="updated">Последнее обновление: 17 марта 2026 г.</p>
+
+      <div class="highlight">
+        Return не собирает никаких персональных данных. Всё остаётся на вашем устройстве.
+      </div>
+
+      <h2>Общее</h2>
+      <p>
+        Return — минималистичное приложение для медитации. Мы уважаем вашу конфиденциальность.
+        Эта политика объясняет, какие данные обрабатывает приложение и как они используются.
+      </p>
+
+      <h2>Сбор данных</h2>
+      <p>
+        Return не собирает никаких персональных данных. Вся информация, которую вы вводите
+        в приложении — сессии практики, отметки настроения, настройки и предпочтения уведомлений —
+        хранится исключительно на вашем устройстве с использованием встроенных технологий Apple
+        (SwiftData и UserDefaults). Эти данные никогда не покидают ваше устройство и не передаются
+        нам или третьим лицам.
+      </p>
+
+      <h2>Локальные уведомления</h2>
+      <p>
+        Приложение может отправлять локальные уведомления с напоминанием о практике. Эти
+        уведомления формируются исключительно на вашем устройстве. Мы не используем серверы
+        push-уведомлений и не получаем никакой информации о том, взаимодействуете ли вы
+        с уведомлениями.
+      </p>
+
+      <h2>Сторонние сервисы</h2>
+      <p>
+        Return не использует сторонние сервисы аналитики, рекламы, отчётов об ошибках
+        или отслеживания. В приложении нет сторонних SDK.
+      </p>
+
+      <h2>Передача данных</h2>
+      <p>
+        Мы не передаём, не продаём и не сдаём в аренду никакие данные третьим лицам —
+        потому что мы их попросту не собираем.
+      </p>
+
+      <h2>Дети</h2>
+      <p>
+        Return не собирает персональную информацию ни от кого, включая детей до 13 лет.
+      </p>
+
+      <h2>Изменения политики</h2>
+      <p>
+        При внесении изменений мы обновим дату «Последнее обновление» в начале этой страницы.
+        Продолжение использования приложения после изменений означает принятие обновлённой политики.
+      </p>
+
+      <h2>Контакт</h2>
+      <p>
+        По вопросам, связанным с политикой конфиденциальности, пишите:<br />
+        <a href="mailto:klesnikov@gmail.com">klesnikov@gmail.com</a>
+      </p>
+    </div>
+
   </div>
+
+  <script>
+    function setLang(lang) {
+      document.querySelectorAll('.lang-section').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.lang-btn').forEach(el => el.classList.remove('active'));
+      document.getElementById('lang-' + lang).classList.add('active');
+      document.querySelector('[onclick="setLang(\'' + lang + '\')"]').classList.add('active');
+    }
+  </script>
 </body>
 </html>
